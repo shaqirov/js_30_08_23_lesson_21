@@ -5,7 +5,6 @@
 Напишите JavaScript код, который будет отправлять PATCH запрос на сервер с введенными данными при нажатии на кнопку.
 Обработайте ответ от сервера и выведите сообщение о частичном обновлении данных.*/
 //==================================================================================================================
-
 const form = document.forms.form
 function getUserInfo (event) {
     event.preventDefault()
@@ -25,7 +24,7 @@ function getUserInfo (event) {
         },
         body: JSON.stringify(userInfo)
     }).then(response => {
-        if(response.status === 200) {
+        if(response.ok) {
             alert("Success")
         } else {
             alert(`Error: ${response.status}`)
@@ -34,7 +33,6 @@ function getUserInfo (event) {
 }
 form.addEventListener('submit', getUserInfo)
 //==================================================================================================================
-
 
 
 /* Задание 3: Удаление данных с помощью DELETE
@@ -64,6 +62,4 @@ btn.forEach(el => {
         }
     })
 })
-
-
 //==================================================================================================================
